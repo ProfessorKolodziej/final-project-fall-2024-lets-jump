@@ -5,11 +5,6 @@ Try changing the color from blue to red in the
 primary color variable below.
 */
 
-:root {
-	--color-primary: blue;
-	--color-secondary: #c00;
-}
-
 /*
 CSS doesn't allow variables to be used in media
 queries just yet, but you can use these values
@@ -22,14 +17,92 @@ to help you out.
 	--size-xl: 1200px;
 */
 
+/* Stan */
+
 h1 {
-	color: var(--color-primary);
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 60px;
+	font-weight: 100;
+	text-align: center;
+	line-height: .8;
 }
 
-/* This uses the same value as --size-xs. */
+h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 36px;
+	font-weight: 100;
+	text-align: center;
+}
+
+.bold {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 36px;
+	font-weight: bold;
+}
+
+.click-to-continue {
+	margin-top: 100px;
+	display: flex;
+	gap: 15px;
+	justify-content: center;
+}
+
+.page1 {
+	padding-top: 100px;
+	padding-bottom: 180px;
+}
+
+.page2 {
+	opacity: 0;
+}
+
+.character-choose {
+	position: absolute;
+	display: flex;
+	top: 100px;
+	padding: 0px 100px;
+	z-index: -1;
+	color: white;
+}
+
+.character-choose-change {
+	position: absolute;
+	top: 100px;
+	padding: 0px 100px;
+	z-index: -1;
+	color: black;
+}
+
+img {
+	width: 50%;
+	height: 50%;
+}
+
+.animals {
+	position: absolute;
+	top: 150px;
+	margin-left: 0%;
+	z-index: -1;
+	display: flex;
+	opacity: 0;
+}
+
+.animals-change {
+	position: absolute;
+	top: 150px;
+	margin-left: 0%;
+	z-index: -1;
+	display: flex;
+	opacity: 1;
+}
+
+/* /Stan */
+
+/* This uses the same value as --size-xs. 
 @media screen and (width >= 320px) {
 	.content-container {
 		margin: 0 auto;
 		max-width: 768px;
 	}
 }
+*/
