@@ -43,3 +43,33 @@ toggleButton.addEventListener("click", appear2);
 toggleButton.addEventListener("click", disappear2);
 
 // /Stan
+
+const cat = document.querySelector("#cat")
+const block = document.querySelector("#block")
+
+window.addEventListener("keydown", event => {
+    console.log(event);
+
+    if (event.code == "Space") {
+        console.log('Press Key Space');
+        cat.classList.add("jumpClass")
+
+        setTimeout(() => {
+            cat.classList.remove('jumpClass');
+        }, 300);
+    }
+});
+
+setInterval(() => {
+    const catBottom = parseFloat(
+        getComputedStyle(cat).getPropertyValue('bottom')
+    );
+    const blockLeft = parseFloat(
+        getComputedStyle(block).getPropertyValue('left')
+    );
+    if (blockLeft <20 && blockLeft > -20 && catBottom <= 20) {
+        console.log('Game Over');
+    }
+}, 10);
+
+
