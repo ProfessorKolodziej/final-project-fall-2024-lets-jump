@@ -38,6 +38,14 @@ h2 {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 36px;
 	font-weight: bold;
+	color: black;
+	text-decoration: none;
+	padding-top: 30px;
+}
+
+.bold:hover {
+	color: white;
+	-webkit-text-stroke: black 1px;
 }
 
 .click-to-continue {
@@ -52,48 +60,20 @@ h2 {
 	padding-bottom: 180px;
 }
 
-.page2 {
-	opacity: 0;
-}
-
-.character-choose {
-	position: absolute;
-	display: flex;
-	top: 100px;
-	padding: 0px 100px;
-	z-index: -1;
-	color: white;
-}
-
-.character-choose-change {
-	position: absolute;
-	top: 100px;
-	padding: 0px 100px;
-	z-index: -1;
-	color: black;
-}
-
 img {
-	width: 50%;
-	height: 50%;
+	width: 300px;
+	height: 260px;
+}
+
+a {
+	height: 100px;
 }
 
 .animals {
-	position: absolute;
-	top: 150px;
-	margin-left: 0%;
-	z-index: -1;
+	margin-top: 50px;
 	display: flex;
-	opacity: 0;
-}
-
-.animals-change {
-	position: absolute;
-	top: 150px;
-	margin-left: 0%;
-	z-index: -1;
-	display: flex;
-	opacity: 1;
+	gap: 80px;
+	justify-content: center;
 }
 
 /* /Stan */
@@ -106,11 +86,6 @@ img {
 	}
 }
 */
-
-body {
-	padding: 20px;
-	background-color:white;
-}
 
 #game {
 	width:2000px;

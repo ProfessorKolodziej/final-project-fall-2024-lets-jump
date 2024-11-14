@@ -6,42 +6,6 @@
 // - Run npm run test regularly to check autograding
 // - You'll need to link this file to your HTML :)
 
-// Stan
-
-const welcomePage = document.querySelector(".page1");
-
-console.log(welcomePage);
-
-function disappear1() {
-    welcomePage.classList.toggle("page2");
-}
-
-const choosePage = document.querySelector(".character-choose");
-
-function appear1() {
-    choosePage.classList.toggle("character-choose-change");
-}
-
-const animalPage = document.querySelector(".animals");
-
-function appear2() {
-    animalPage.classList.toggle("animals-change");
-}
-
-function disappear2() {
-    welcomePage.style.display = "none";
-}
-
-document.addEventListener("click", disappear1);
-
-document.addEventListener("click", appear1);
-
-document.addEventListener("click", appear2);
-
-document.addEventListener("click", disappear2);
-
-// /Stan
-
 const cat = document.querySelector("#cat")
 const block = document.querySelector("#block")
 
