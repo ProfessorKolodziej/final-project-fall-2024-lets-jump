@@ -32,15 +32,13 @@ function disappear2() {
     welcomePage.style.display = "none";
 }
 
-const toggleButton = document.querySelector(".page1");
+document.addEventListener("click", disappear1);
 
-toggleButton.addEventListener("click", disappear1);
+document.addEventListener("click", appear1);
 
-toggleButton.addEventListener("click", appear1);
+document.addEventListener("click", appear2);
 
-toggleButton.addEventListener("click", appear2);
-
-toggleButton.addEventListener("click", disappear2);
+document.addEventListener("click", disappear2);
 
 // /Stan
 
