@@ -79,6 +79,30 @@ img {
 	justify-content: center;
 }
 
+.top-bar {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	height: 100px;
+	grid-gap: 10px;
+}
+
+.button {
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 36px;
+	font-weight: 100;
+	color: black;
+	height: 100px;
+	justify-self: start;
+	align-self: end;
+}
+
+.score {
+	justify-self: end;
+	align-self: end;
+	height: 70px;
+}
+
 /* /Stan */
 
 /* This uses the same value as --size-xs. 
