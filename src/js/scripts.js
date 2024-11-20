@@ -29,8 +29,8 @@ setInterval(() => {
     const blockLeft = parseFloat(
         getComputedStyle(block).getPropertyValue('left')
     );
-    if (blockLeft <20 && blockLeft > -20 && catBottom <= 20) {
-        alert('Game Over! Refresh to restart.');
+    if (blockLeft <250 && blockLeft > 150 && catBottom <= 50) {
+        window.location.href = "lastPage.html";
     }
 }, 10);
 
@@ -41,7 +41,7 @@ setInterval(() => {
         getComputedStyle(block).getPropertyValue('left')
     );
 
-    if (blockLeft < 0) {
+    if (blockLeft < 1) {
         score++;
         console.log(`Score: ${score}`);
     }

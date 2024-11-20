@@ -67,12 +67,12 @@ h2 {
 	padding-bottom: 180px;
 }
 
-img {
+.pickImages {
 	width: 300px;
 	height: 260px;
 }
 
-img:hover {
+.pickImages:hover {
 	width: 330px;
 	height: 286px;
 }
@@ -89,6 +89,7 @@ img:hover {
 	grid-template-columns: 1fr 1fr 1fr;
 	height: 100px;
 	grid-gap: 10px;
+	padding-left: 60px;
 }
 
 .button {
@@ -113,6 +114,11 @@ img:hover {
 	height: 70px;
 }
 
+.backgroundPic {
+	width: 1280px;
+	height: 400px;
+}
+
 /* /Stan */
 
 /* This uses the same value as --size-xs. 
@@ -125,8 +131,8 @@ img:hover {
 */
 
 #game {
-	width:2100px;
-	height: 800px;
+	width: 1280px;
+	height: 400px;
 	margin: 0 auto;
 	border: 2px solid black;
 	position: relative;
@@ -135,12 +141,12 @@ img:hover {
 }
 
 #cat {
-	width: 100px;
-	height: 100px;
+	width: 200px;
+	height: 200px;
 	border-radius:50%;
-	background-color:red;
 	position:absolute;
 	bottom: 0px;
+	left: 120px;
 }
 
 #cat img {
@@ -150,7 +156,7 @@ img:hover {
 }
 
 .jumpClass {
-	animation: jump 0.3s infinite;
+	animation: jump 1s infinite;
 }
 
 @keyframes jump {
@@ -172,18 +178,23 @@ img:hover {
 }
 
 #block  {
-	width: 20px;
-	height:80px;
-	background-color: blue;
-	position:absolute;
+	width: 100px;
+	height: 100px;
+	position: absolute;
 	bottom: 0px;
-	left: 450px;
-	animation: blockMove 1.2s linear infinite;
+	right: 0px;
+	animation: blockMove 2s linear infinite;
+}
+
+#block img {
+	width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 @keyframes blockMove {
     0% {
-        left: 450px;
+        left: 1280px;
     }
     100% {
         left: -50px;
