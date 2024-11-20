@@ -30,8 +30,29 @@ setInterval(() => {
         getComputedStyle(block).getPropertyValue('left')
     );
     if (blockLeft <20 && blockLeft > -20 && catBottom <= 20) {
-        console.log('Game Over');
+        alert('Game Over! Refresh to restart.');
     }
 }, 10);
 
+//Score Counter
+let score = 0;
+setInterval(() => {
+    const blockLeft = parseFloat(
+        getComputedStyle(block).getPropertyValue('left')
+    );
+
+    if (blockLeft < 0) {
+        score++;
+        console.log(`Score: ${score}`);
+    }
+}, 50);
+
+//Mobile
+window.addEventListener("touchstart", () => {
+    cat.classList.add("jumpClass");
+
+    setTimeout(() => {
+        cat.classList.remove("jumpClass");
+    }, 300);
+});
 
