@@ -109,7 +109,6 @@ h2 {
 }
 
 .score {
-	justify-self: end;
 	align-self: end;
 	height: 70px;
 }
@@ -200,12 +199,4 @@ h2 {
         left: -50px;
     }
 }
-
-#score {
-    text-align: center;
-    font-size: 36px;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-top: 10px;
-}
-
 
