@@ -36,7 +36,7 @@ setInterval(() => {
         // Collision detected, game over
         gameRunning = false;
         window.location.href = "lastPage.html";
-    } else if (blockLeft < 150 && blockLeft > 140 && catBottom > 50) {
+    } else if (blockLeft < 150 && blockLeft > 140) {
         // Block successfully passed
         score++;
         scoreElement.innerHTML = "Score: " + score;
@@ -62,62 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const scoreElement = document.querySelector(".score");
     scoreElement.textContent = `Score: ${finalScore}`; // Update the score display
 });
-
-
-//for cat
-window.addEventListener("keydown", event => {
-    console.log(event);
-
-    if (event.code == "Space") {
-        console.log('Press Key Space');
-        cat.classList.add("jumpClass")
-
-        setTimeout(() => {
-            cat.classList.remove('jumpClass');
-        }, 300);
-    }
-});
-
-setInterval(() => {
-    const catBottom = parseFloat(
-        getComputedStyle(cat).getPropertyValue('bottom')
-    );
-    const blockLeft = parseFloat(
-        getComputedStyle(block).getPropertyValue('left')
-    );
-    if (blockLeft <250 && blockLeft > 150 && catBottom <= 50) {
-        window.location.href = "lastPage.html";
-    }
-}, 10);
-
-//for dog
-
-window.addEventListener("keydown", event => {
-    console.log(event);
-
-    if (event.code == "Space") {
-        console.log('Press Key Space');
-        cat.classList.add("jumpClass")
-
-        setTimeout(() => {
-            cat.classList.remove('jumpClass');
-        }, 300);
-    }
-});
-
-setInterval(() => {
-    const catBottom = parseFloat(
-        getComputedStyle(cat).getPropertyValue('bottom')
-    );
-    const blockLeft = parseFloat(
-        getComputedStyle(block).getPropertyValue('left')
-    );
-    if (blockLeft <250 && blockLeft > 150 && catBottom <= 50) {
-        window.location.href = "lastPage.html";
-    }
-}, 10);
-
-document.getElementById("score").innerHTML = "Score: " + score;
 
 //Mobile
 window.addEventListener("touchstart", () => {
