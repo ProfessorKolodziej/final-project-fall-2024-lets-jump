@@ -61,6 +61,7 @@ h2 {
     display: inline-block;
     transition: all 0.3s ease;
     text-align: center;
+    height: 50px;
 }
 
 .bold:hover, .button:hover {

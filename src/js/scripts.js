@@ -39,7 +39,7 @@ setInterval(() => {
         getComputedStyle(block).getPropertyValue('left')
     );
 
-    if (blockLeft < 250 && blockLeft > 150 && catBottom <= 50) {
+    if (blockLeft < 230 && blockLeft > 120 && catBottom <= 50) {
         // Collision detected, game over
         gameRunning = false;
         // Save the score to localStorage
