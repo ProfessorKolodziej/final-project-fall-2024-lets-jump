@@ -42,6 +42,7 @@ setInterval(() => {
     if (blockLeft < 250 && blockLeft > 150 && catBottom <= 50) {
         // Collision detected, game over
         gameRunning = false;
+        
         window.location.href = "lastPage.html";
     } else if (blockLeft < 150 && blockLeft > 140) {
         // Block successfully passed
@@ -74,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     scoreElement.textContent = `Score: ${finalScore}`;
 });
 
-localStorage.setItem = document.getElementById("final-score");
+localStorage.setItem = document.getElementById("score", score);
 
 //Mobile
 window.addEventListener("touchstart", () => {
