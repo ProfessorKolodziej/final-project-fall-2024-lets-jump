@@ -14,7 +14,7 @@
 	<main class="content-container">
 		<div class="page1"> 
 			<h1>Game Over</h1>
-			<h1 id="final-score">Score:</h1> <!-- Final score will be dynamically updated -->
+			<h1 id="final-score">Score:</h1>
 			<div class="threeButtons">
 				<a href="index.html" class="bold">Play again</a> 
 				<a href="secondPage.html" class="bold">Swap character</a>
@@ -25,7 +25,7 @@
 	<script>
         document.addEventListener("DOMContentLoaded", () => {
             const finalScore = localStorage.getItem("finalScore") || 0;
-            const scoreElement = document.querySelector(".score");
+            const scoreElement = document.getElementById("final-score");
             scoreElement.textContent = `Score: ${finalScore}`;
         });
     </script>

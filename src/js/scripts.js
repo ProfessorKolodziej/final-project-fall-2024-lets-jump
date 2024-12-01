@@ -10,13 +10,20 @@ const cat = document.querySelector("#cat");
 const dog = document.querySelector("#dog");
 const block = document.querySelector("#block");
 const scoreElement = document.querySelector("#score");
+const gameContainer = document.querySelector("#game");
+const jumpSound = new Audio("images/cartoon-jump-6462.mp3");
 
 let score = 0;
 let gameRunning = true;
 
 window.addEventListener("keydown", event => {
     if (event.code === "Space" && gameRunning) {
+        //Add Jump Sound
+        jumpSound.currentTime = 0;
+        jumpSound.play();
+        //Add Jump Action
         cat.classList.add("jumpClass");
+
 
         setTimeout(() => {
             cat.classList.remove("jumpClass");
@@ -43,11 +50,15 @@ setInterval(() => {
     }
 }, 10);
 
-console.log("Score updated:", score);
+console.log("Final Score:", finalscore);
 
 // Mobile support
 window.addEventListener("touchstart", () => {
     if (gameRunning) {
+        //Play Jump Sound
+        jumpSound.currentTime = 0;
+        jumpSound.play();
+
         cat.classList.add("jumpClass");
 
         setTimeout(() => {
@@ -58,10 +69,12 @@ window.addEventListener("touchstart", () => {
 
 //Retrieve score and display it on the last page
 document.addEventListener("DOMContentLoaded", () => {
-    const finalScore = localStorage.getItem("finalScore") || 0; // Get the score from localStorage
-    const scoreElement = document.querySelector(".score");
-    scoreElement.textContent = `Score: ${finalScore}`; // Update the score display
+    const finalScore = localStorage.getItem("finalScore") || 0;
+    const scoreElement = document.getElementById("final-score");
+    scoreElement.textContent = `Score: ${finalScore}`;
 });
+
+localStorage.setItem = document.getElementById("final-score");
 
 //Mobile
 window.addEventListener("touchstart", () => {
@@ -71,5 +84,3 @@ window.addEventListener("touchstart", () => {
         cat.classList.remove("jumpClass");
     }, 300);
 });
-
-
