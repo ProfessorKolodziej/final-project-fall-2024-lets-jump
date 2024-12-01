@@ -42,6 +42,8 @@ setInterval(() => {
     if (blockLeft < 250 && blockLeft > 150 && catBottom <= 50) {
         // Collision detected, game over
         gameRunning = false;
+        // Save the score to localStorage
+        localStorage.setItem("score", score);
         
         window.location.href = "lastPage.html";
     } else if (blockLeft < 150 && blockLeft > 140) {

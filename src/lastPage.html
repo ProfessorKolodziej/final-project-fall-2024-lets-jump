@@ -16,20 +16,24 @@
 			<h1>Game Over</h1>
 			<h1 id="final-score">Score:</h1>
 			<div class="threeButtons">
-				<a href="index.html" class="bold">Play again</a> 
-				<a href="secondPage.html" class="bold">Swap character</a>
-				<a href="https://www.bu.edu" class="bold">Exit game</a>
+				Play again 
+				Swap character
+				
 			</div>
 		</div>
 	</main>
 	<script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const finalScore = localStorage.getItem("finalScore") || 0;
-            const scoreElement = document.getElementById("final-score");
-            scoreElement.textContent = `Score: ${finalScore}`;
-        });
+		document.addEventListener("DOMContentLoaded", () => {
+    		const finalScore = localStorage.getItem("score") || 0; // Get the score from localStorage
+    		const scoreElement = document.querySelector("#final-score"); // Get the score display element
+
+    		if (scoreElement) {
+        		scoreElement.textContent = `Score: ${finalScore}`; // Update the score display
+    		} else {
+        		console.log("Score element not found!");
+    		}
+		});
     </script>
 </body>
 
 </html>
-
