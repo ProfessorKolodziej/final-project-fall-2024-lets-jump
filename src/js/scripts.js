@@ -109,4 +109,17 @@ window.addEventListener("touchstart", () => {
     }, 300);
 });
 
+function checkOrientation() {
+    const alert = document.getElementById("rotate-alert");
+    if (window.innerHeight > window.innerWidth) {
+        // Stand show alert
+        alert.style.display = "block";
+    } else {
+        // Landscape hide alert
+        alert.style.display = "none";
+    }
+}
+
+window.addEventListener("resize", checkOrientation);
+window.addEventListener("load", checkOrientation);
 

@@ -237,4 +237,12 @@ h2 {
     }
 }
 
-
+@media (max-width: 768px) { 
+    #game {
+        height: 60vh;
+    }
+    .cat, .block {
+        width: 15vw;
+        height: 15vw;
+    }
+}
