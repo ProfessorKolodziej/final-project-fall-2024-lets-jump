@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="A jumping game." />
+	<title>JumpWorld</title>
+	<link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+	<main class="content-container">
+		<div class="page1"> 
+			<h1>Game Over</h1>
+			<h1 id="final-score">Score:</h1>
+			<div class="threeButtons">
+				<a href = "index.html" class = "bold">Play Again</a>
+				<a href = "secondPage.html" class = "bold">Swap Character</a>
+				<a href = "https://www.bu.edu" class = "bold">Exit Game</a>
+			</div>
+		</div>
+	</main>
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+    		const finalScore = localStorage.getItem("score") || 0; // Get the score from localStorage
+    		const scoreElement = document.querySelector("#final-score"); // Get the score display element
+
+    		if (scoreElement) {
+        		scoreElement.textContent = `Score: ${finalScore}`; // Update the score display
+    		} else {
+        		console.log("Score element not found!");
+    		}
+		});
+    </script>
+</body>
+
+</html>

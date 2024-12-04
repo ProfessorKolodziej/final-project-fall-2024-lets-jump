@@ -1,0 +1,248 @@
+/*
+CSS controls the styling of the page.
+You can write a color in directly, or use variables.
+Try changing the color from blue to red in the
+primary color variable below.
+*/
+
+/*
+CSS doesn't allow variables to be used in media
+queries just yet, but you can use these values
+to help you out.
+
+	--size-xs: 320px;
+	--size-sm: 480px;
+	--size-md: 768px;
+	--size-lg: 1024px;
+	--size-xl: 1200px;
+*/
+
+/* Stan */
+
+/* General Page Styling */
+body {
+    font-family: 'Arial', Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Gradient background */
+    color: white;
+    overflow: hidden;
+}
+
+/* Universal Heading Styling */
+h1, h2 {
+    text-align: center;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+h1 {
+    font-size: 70px;
+    font-weight: bold;
+    color: #FFC107;
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: normal;
+    color: #FFEB3B;
+}
+
+/* Buttons Styling */
+.bold, .button {
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #FF5722, #FFC107);
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    text-align: center;
+    height: 50px;
+}
+
+.bold:hover, .button:hover {
+    background: linear-gradient(135deg, #FFC107, #FF5722);
+    color: black;
+    transform: scale(1.1);
+}
+
+/* Main Content Container */
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Page-specific Styling */
+.page1 {
+    padding: 40px 20px;
+}
+
+.click-to-continue, .threeButtons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.animals {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+/* Character Selection Images */
+.pickImages {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pickImages:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+/* Game Container */
+#game {
+    width: 100%;
+    max-width: 1280px;
+    height: 500px;
+    margin: 20px auto;
+    border: 4px solid #FF5722;
+    border-radius: 10px;
+    position: relative;
+    background: black;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.backgroundPic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+/* Character Styling */
+#cat, #dog {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    bottom: 0px;
+    left: 100px;
+}
+
+#cat img, #dog img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+	filter: brightness(2);
+}
+
+/* Obstacle Styling */
+#block {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    animation: blockMove 2s linear infinite;
+}
+
+#block img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Score Container */
+.score-container {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Game Over Page */
+#final-score {
+    font-size: 50px;
+    font-weight: bold;
+    color: #FFC107;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Animations */
+.jumpClass {
+    animation: jump 0.5s ease-in-out;
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0px;
+        transform: scale(1);
+    }
+	15% {
+        bottom: 200px;
+        transform: scale(1.1);
+    }
+	30% {
+        bottom: 250px;
+        transform: scale(1.1);
+    }
+	50% {
+        bottom: 300px;
+        transform: scale(1.1);
+    }
+	65% {
+        bottom: 250px;
+        transform: scale(1.1);
+    }
+    70% {
+        bottom: 200px;
+        transform: scale(1.1);
+    }
+    100% {
+        bottom: 0px;
+        transform: scale(1);
+    }
+}
+
+@keyframes blockMove {
+    0% {
+        left: 1280px;
+    }
+    100% {
+        left: -50px;
+    }
+}
+
+@media (max-width: 768px) { 
+    #game {
+        height: 60vh;
+    }
+    .cat, .block {
+        width: 15vw;
+        height: 15vw;
+    }
+}
