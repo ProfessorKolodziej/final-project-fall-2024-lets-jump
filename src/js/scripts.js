@@ -102,7 +102,8 @@ localStorage.setItem = document.getElementById("score", score);
 
 //Mobile
 window.addEventListener("touchstart", event => {
-    event.preventDefault(); // Prevent default touch behaviors (e.g., scrolling)
+    event.preventDefault();
+    console.log("Touch detected", event);
     if (gameRunning) {
         jumpSound.currentTime = 0;
         jumpSound.play();
@@ -114,18 +115,4 @@ window.addEventListener("touchstart", event => {
         }, 300);
     }
 });
-
-function checkOrientation() {
-    const alert = document.getElementById("rotate-alert");
-    if (window.innerHeight > window.innerWidth) {
-        // Stand show alert
-        alert.style.display = "block";
-    } else {
-        // Landscape hide alert
-        alert.style.display = "none";
-    }
-}
-
-window.addEventListener("resize", checkOrientation);
-window.addEventListener("load", checkOrientation);
 
