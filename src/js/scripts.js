@@ -101,12 +101,18 @@ document.addEventListener("DOMContentLoaded", () => {
 localStorage.setItem = document.getElementById("score", score);
 
 //Mobile
-window.addEventListener("touchstart", () => {
-    cat.classList.add("jumpClass");
+window.addEventListener("touchstart", event => {
+    event.preventDefault(); // Prevent default touch behaviors (e.g., scrolling)
+    if (gameRunning) {
+        jumpSound.currentTime = 0;
+        jumpSound.play();
 
-    setTimeout(() => {
-        cat.classList.remove("jumpClass");
-    }, 300);
+        cat.classList.add("jumpClass");
+
+        setTimeout(() => {
+            cat.classList.remove("jumpClass");
+        }, 300);
+    }
 });
 
 function checkOrientation() {
