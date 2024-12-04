@@ -13,6 +13,12 @@ const scoreElement = document.querySelector("#score");
 const gameContainer = document.querySelector("#game");
 const jumpSound = new Audio("images/cartoon-jump-6462.mp3");
 
+const blockImages = [
+    "images/BT.png",
+    "images/crab.png",
+    "images/yeezy.png"
+]
+
 let score = 0;
 let gameRunning = true;
 
@@ -53,6 +59,21 @@ setInterval(() => {
     }
 }, 10);
 
+//Select Blocks Randomly Appear
+function updateBlockImage() {
+    const randomImage = blockImages[Math.floor(Math.random() * blockImages.length)];
+    const blockImageElement = block.querySelector("img");
+    blockImageElement.src = randomImage;
+    blockImageElement.alt = randomImage.split('/').pop().split('.')[0];
+}
+
+// Refresh Block
+setInterval(() => {
+    if (gameRunning) {
+        updateBlockImage();
+    }
+}, 4000);
+
 console.log("Final Score:", finalscore);
 
 // Mobile support
@@ -87,3 +108,5 @@ window.addEventListener("touchstart", () => {
         cat.classList.remove("jumpClass");
     }, 300);
 });
+
+
